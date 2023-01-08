@@ -40,13 +40,19 @@ how to compile?
     1st argument --> size n x n
     2nd argument  -->  sym or unsym
     3rd argument  -->  sparse or full banded
-
-    benchinverse.exe           --> 22x22 full banded unsymetric
-    benchinverse.exe 2000  --> 2000x2000 full banded unsymetric problem
-    benchinverse.exe 2000  sym --> 2000x2000 full banded symetric problem
-    benchinverse.exe 2000  unsym --> 2000x2000 full banded unsymetric problem
-    benchinverse.exe 2000  sym  sparse --> 2000x2000 full banded symetric sparse problem
-    benchinverse.exe 2000  unsym  sparse --> 2000x2000 full banded unsymetric sparse problem
+    
+    22x22 full banded unsymetric 
+    benchinverse.exe       
+    2000x2000 full banded unsymetric problem
+    benchinverse.exe 2000  
+    3000x3000 full banded symetric problem
+    benchinverse.exe 3000  sym 
+    4000x4000 full banded unsymetric problem
+    benchinverse.exe 4000  unsym  
+    5000x5000 symetric sparse problem
+    benchinverse.exe 5000  sym  sparse  
+    6000x6000 unsymetric sparse problem
+    benchinverse.exe 6000  unsym  sparse 
 
 Note : 
 1. UPCASE calling is needed in intel fortran windows -DF77_CALL_C=UPCASE
