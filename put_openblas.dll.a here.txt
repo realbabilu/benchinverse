@@ -1,0 +1,3 @@
+Download binary openBLAS https://github.com/xianyi/OpenBLAS
+tested https://github.com/xianyi/OpenBLAS/releases/tag/v0.3.21
+OpenBLAS-0.3.21-x64.zip
