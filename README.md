@@ -4,7 +4,10 @@ Version 0.0.1 MKL and nonMKL version int32 or integer*4 version fortran
 uploaded 08/01/2023
 
 how to compile?
-1. install intel mkl and intel compiler for MKL version, for non MKL, need fortran compiler, c compiler, blas-lapack (openblas,acml, etc)
+1. install intel mkl and intel compiler for MKL version, 
+   intell gcc equation.com for non MKL, need fortran compiler, c compiler, blas-lapack (openblas,acml, etc), or mys or cygwin or linux compiler
+   for gcc will need libgcc_s_seh-1.dll libgfortran-5.dll libopenblas.dll libquadmath-0.dll libwinpthread-1.dll
+   
 2. download superlu first in  other  folder
 3. extract SRC in superlu to separate folder.  also c_fortran_dgssv.c  c_fortran_sgssv.c  c_fortran_cgssv.c  c_fortran_zgssv.c 
    in FORTRAN folder must be copied in the same folder. 
