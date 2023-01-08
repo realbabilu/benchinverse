@@ -2,6 +2,7 @@
 Benchmark for Solving Dense Matrix or Sparse Matrix
 Version 0.0.1 MKL and nonMKL version int32 or integer*4 version fortran
 uploaded 08/01/2023
+This will inverse the matrix and reinverse matrix again to check the different from original matrix
 
 how to compile?
 1. install intel mkl and intel compiler for MKL version, OR
@@ -45,17 +46,28 @@ how to compile?
     2nd argument  -->  sym or unsym
     3rd argument  -->  sparse or full banded
     
-    22x22 full banded unsymetric 
+    22x22 full banded unsymetric example 
+    
     benchinverse.exe       
-    2000x2000 full banded unsymetric problem
-    benchinverse.exe 2000  
-    3000x3000 full banded symetric problem
+    
+    2000x2000 full banded unsymetric problem example
+    
+    benchinverse.exe 2000 
+    
+    3000x3000 full banded symetric problem example
+  
     benchinverse.exe 3000  sym 
-    4000x4000 full banded unsymetric problem
-    benchinverse.exe 4000  unsym  
-    5000x5000 symetric sparse problem
+    
+    4000x4000 full banded unsymetric problem example
+    
+    benchinverse.exe 4000  unsym 
+    
+    5000x5000 symetric sparse problem example
+    
     benchinverse.exe 5000  sym  sparse  
-    6000x6000 unsymetric sparse problem
+    
+    6000x6000 unsymetric sparse problem example
+    
     benchinverse.exe 6000  unsym  sparse 
 
 Note : 
