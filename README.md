@@ -2,7 +2,7 @@
 Benchmark for Solving Dense Matrix or Sparse Matrix
 Version 0.0.1 MKL and nonMKL version int32 or integer*4 version fortran
 uploaded 08/01/2023
-This will inverse the matrix and reinverse matrix again to check the different from original matrix
+This will inverse the matrix and reinverse matrix again to check the different from original matrix like TEST_FPU Dave Frank but it could do changing matrix and sparse input.
 
 how to compile?
 1. install intel mkl and intel compiler for MKL version, OR
