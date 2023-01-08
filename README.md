@@ -1,6 +1,6 @@
 # benchinverse
 Benchmark for Solving Dense Matrix or Sparse Matrix
-Version 0.0.1 MKL version int32 or integer*4 version fortran
+Version 0.0.1 MKL and nonMKL version int32 or integer*4 version fortran
 uploaded 08/01/2023
 
 how to compile?
