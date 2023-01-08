@@ -7,8 +7,9 @@ how to compile?
 1. install intel mkl for MKL version
 2. download superlu first in  other  folder
 3. extract SRC in superlu to separate folder.  also c_fortran_dgssv.c  c_fortran_sgssv.c  c_fortran_cgssv.c  c_fortran_zgssv.c 
-  in FORTRAN folder must be copied in the same folder. 
+   in FORTRAN folder must be copied in the same folder. 
    build the static in that folder
+    
     example for windows intel Oneapi (c and Fortran) via Visual OneAPI command prompt x64 
     icl *.c /c  /QaxCORE-AVX2 -DF77_CALL_C=UPCASE /O3
 
@@ -17,14 +18,16 @@ how to compile?
     lib *.obj /OUT:libsuperlu.lib 
  
     example for windows gcc equation.com 
+    
     gcc -c -Ofast -ffast-math -march=core-avx2 *.c  (use batch file instead)
-   ar.exe qc libsuperlu.a  *.o
-   ranlib.exe libsuperlu.a
+    ar.exe qc libsuperlu.a  *.o
+    ranlib.exe libsuperlu.a
 
 4   copy the lib (a or lib) to the folder of benchinverse.f90 
 5.  Create exe
+
      in windows intel oneapi
-    ifort benchinverse.f90 superlu.lib -DF77_CALL_C=UPCASE  /Qmkl /Ox /Qpar /QaxCORE-AVX2  
+     ifort benchinverse.f90 superlu.lib -DF77_CALL_C=UPCASE  /Qmkl /Ox /Qpar /QaxCORE-AVX2  
 
     in windows gcc equation.com with openblas
     gfortran benchinverse_nonMKL.f90  libsuperlu.a libopenblas.dll.a -o benchinverse_nonMKL.exe
