@@ -12,38 +12,28 @@ how to compile?
     
     example for windows intel Oneapi (c and Fortran) via Visual OneAPI command prompt x64
     
-    ...
     icl *.c /c  /QaxCORE-AVX2 -DF77_CALL_C=UPCASE /O3
-    ...
-    
+
     example for windows MSVC via Visual OneAPI command prompt x64. Upcase by intel fortran MSVC (history: MS fortran -> Digital Compaq Fortran -> Intel Fortran) 
     
-    ...
     icl *.c /c  /QaxCORE-AVX2 -DF77_CALL_C=UPCASE /O3
     lib *.obj /OUT:libsuperlu.lib 
-    ...
     
     example for windows gcc equation.com (use batch file instead)
     
-    ...
     gcc -c -Ofast -ffast-math -march:core-avx2 *.c
     ar.exe qc libsuperlu.a  *.o
     ranlib.exe libsuperlu.a
-    ...
     
 4   copy the lib (a or lib) to the folder of benchinverse.f90 
 5.  Create exe
      in windows intel oneapi
      
-     ...
      ifort benchinverse.f90 superlu.lib -DF77_CALL_C=UPCASE  /Qmkl /Ox /Qpar /QaxCORE-AVX2  
-     ...
 
     in windows gcc equation.com with openblas
-    
-    ...
+   
     gfortran benchinverse_nonMKL.f90  libsuperlu.a libopenblas.dll.a -o benchinverse_nonMKL.exe
-    ...
 
 6. how to use it?
     no argument --> default 22x22 random 
