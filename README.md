@@ -75,3 +75,74 @@ Note :
  2. ADD_ calling is using for others like gfortran -DF77_CALL_C=ADD_
  3. MKL need Intel compiler, even MSVC will gave error in DSS.
  4. Benchinverse_nonMKL will not use DSS and PARDISO
+
+OUTPUT SAMPLE:
+
+D:\intel-run\benchinverse2>benchinverse.exe 6000 sym sparse
+ Creating symmetric matrix
+ Creating sparse matrix
+  Matrix has zero values    :     35981912
+  Matrix has nonzero values :        18088
+  Matrix has total values   :     36000000
+  Matrix has sparse about   :   0.999497555555556
+  Matrix is symmetric
+  Error read =   0.000000000000000E+000
+  Print the CSR Matrix? n
+   STAGE 1 - Inverse
+  Matrix has zero values    :     35981912
+  Matrix has nonzero values :        18088
+  Matrix has total values   :     36000000
+  Matrix has sparse about   :   0.999497555555556
+  Matrix is symmetric
+ Test1-1: DGETRFI-    1 (  6000x  6000) inverts in   2.271 seconds
+   STAGE 2 - Reinverse
+  Matrix is full banded
+  Matrix is unsymmetric
+ Test1-2: DGETRFI-    1 (  6000x  6000) inverts in   2.235 seconds
+  PASS0 :   1.00000000000000        1.00000000000000
+  PASS1 :   2.30862748333913      -1.204657780654390E-004
+  PASS2 :   1.00000000000000        1.00000000000226
+  Test1: DGETRFI-    2 (  6000x  6000) inverts in   4.506 seconds  Err=0.000000000000
+   STAGE 1 - Inverse
+ Test2-1: MKLDSS -    1 (  6000x  6000) inverts in   1.982 seconds
+   STAGE 2 - ReInverse
+  Matrix is full banded
+  Matrix is unsymmetric
+ Test2-2: MKLDSS -    1 (  6000x  6000) inverts in  85.513 seconds
+  PASS0 :   1.00000000000000        1.00000000000000
+  PASS1 :   2.30862748333914      -1.204657780654388E-004
+  PASS2 :  0.999999999999998       0.999999999999930
+  Test2: MKLDSS -    2 (  6000x  6000) inverts in  87.587 seconds  Err=0.000000000000
+   STAGE 1 - Inverse
+ Test3-1: PARDISO-    1 (  6000x  6000) inverts in   2.006 seconds
+   STAGE 2 - ReInverse
+  Matrix is full banded
+  Matrix is unsymmetric
+ Test3-2: PARDISO-    1 (  6000x  6000) inverts in  98.499 seconds
+  PASS0 :   1.00000000000000        1.00000000000000
+  PASS1 :   2.30862748333914      -1.204657780654384E-004
+  PASS2 :   1.00000000000000       0.999999999999448
+  Test3: PARDISO-    2 (  6000x  6000) inverts in 100.505 seconds  Err=0.000000000104
+   STAGE 1 - Inverse
+  Matrix has zero values    :     35981912
+  Matrix has nonzero values :        18088
+  Matrix has total values   :     36000000
+  Matrix has sparse about   :   0.999497555555556
+  Matrix is symmetric
+No of nonzeros in factor L = 17471
+No of nonzeros in factor U = 18336
+No of nonzeros in L+U = 35807
+L\U MB 0.473    total MB needed 2.609
+ Test4-1: SUPERLU2-    1 (  6000x  6000) inverts in   0.790 seconds
+   STAGE 2 - Reinverse
+  Matrix is full banded
+  Matrix is unsymmetric
+No of nonzeros in factor L = 18003000
+No of nonzeros in factor U = 18003000
+No of nonzeros in L+U = 36006000
+L\U MB 358.122  total MB needed 360.258
+ Test4-2: SUPERLU2-    1 (  6000x  6000) inverts in 193.472 seconds
+  PASS0 :   1.00000000000000        1.00000000000000
+  PASS1 :   2.30862748333914      -1.204657780654386E-004
+  PASS2 :   1.00000000000000       0.999999999999965
+  Test: SUPERLU2-    2 (  6000x  6000) inverts in 194.342 seconds  Err=0.000000000000
