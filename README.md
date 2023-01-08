@@ -4,7 +4,8 @@ Version 0.0.1 MKL and nonMKL version int32 or integer*4 version fortran
 uploaded 08/01/2023
 
 how to compile?
-1. install intel mkl and intel compiler for MKL version, 
+1. install intel mkl and intel compiler for MKL version, OR
+
    intell gcc equation.com for non MKL, need fortran compiler, c compiler, blas-lapack (openblas,acml, etc), or mys or cygwin or linux compiler
    for gcc will need libgcc_s_seh-1.dll libgfortran-5.dll libopenblas.dll libquadmath-0.dll libwinpthread-1.dll
    
